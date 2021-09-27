@@ -4,13 +4,13 @@ module Api
       def index 
         @hotels = Hotel.all 
 
-        render json: HotelSerializer.new(@hotels).serialized_json
+        render json: HotelSerializer.new(@hotels, options).serialized_json
       end
 
       def show 
         @hotel = Hotel.find_by(slug: params[:slug])
 
-        render json: HotelSerializer.new(@hotel).serialized_json
+        render json: HotelSerializer.new(@hotel, options).serialized_json
       end
 
       def create 
@@ -27,7 +27,7 @@ module Api
         @hotel = Hotel.find_by(slug: params[:slug])
 
         if @hotel.update(hotel_params)
-          render json: HotelSerializer.new(@hotel).serialized_json 
+          render json: HotelSerializer.new(@hotel, options).serialized_json 
         else
           render json: { error: @hotel.errors.messages }, status: 422
         end
@@ -47,6 +47,10 @@ module Api
 
       def hotel_params
         params.require(:hotel).permit(:name, :image_url)
+      end
+
+      def options
+        @options ||= { include: i%[reviews]}
       end
     end
   end
