@@ -2,6 +2,7 @@ import axios from "axios"
 import React, { useEffect, useState } from "react"
 import Header from "./Header"
 import styled from 'styled-components'
+import ReviewForm from "./ReviewForm"
 
 const Wrapper = styled.div`
   margin: 0 auto;
@@ -42,23 +43,24 @@ const Hotel = (props) => {
 
   return (
     <Wrapper>
-      <Column>
-        <Main>
-          {
-            loaded && 
-            <Header 
-              attributes={hotel.data.attributes}
-              reviews={hotel.included}
-            />
-          }
-          <div className="reviews"></div>
-        </Main>
-      </Column>
-      <Column>
-        <div className="review-form">
-          REview form
-        </div>
-      </Column>
+      {
+        loaded && 
+        <>
+          <Column>
+            <Main>
+              
+                <Header 
+                  attributes={hotel.data.attributes}
+                  reviews={hotel.included}
+                />
+              <div className="reviews"></div>
+            </Main>
+          </Column>
+          <Column>
+            <ReviewForm />
+          </Column>
+        </>
+      }
     </Wrapper>
   )
 }

@@ -31,7 +31,7 @@ const LinkWrapper = styled.div`
 
   a {
     color: #fff;
-    background-color: #ccc;
+    background-color: #228B22;
     padding: 10px 50px;
     text-decoration: none;
   }

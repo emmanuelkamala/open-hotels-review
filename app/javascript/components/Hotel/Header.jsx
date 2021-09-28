@@ -18,6 +18,7 @@ const Wrapper = styled.div`
 const TotalReviews = styled.div`
   font-size: 18px;
   padding: 10px 0;
+  margin-top: 80px;
 `
 const TotalOutOf = styled.div`
   font-size: 18px;
