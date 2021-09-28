@@ -4,8 +4,9 @@ import Hotel from './Hotel'
 import styled from 'styled-components'
 
 const Home = styled.div`
-  width: 100vw;
-  overflow: hidden;
+ max-width: 1200px;
+ margin: 0 auto;
+ text-align: center;
   
 `
 const Header = styled.div`
@@ -20,10 +21,12 @@ const Subheader = styled.div`
 `
 const Grid = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex: 1;
-
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  flex: 1 0 20%;
+  margin: 5px;
+  height: 100px;
 `
 
 const Hotels = () => {
