@@ -6,11 +6,18 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from '../components/App'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import styled from 'styled-components'
+
+const Wrapper = styled.div`
+  font-family: 'Yaldevi', sans-serif;
+`
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Router>
-      <Route path="/" component={App} />
+      <Wrapper>
+        <Route path="/" component={App} />
+      </Wrapper>
     </Router>,
     document.body.appendChild(document.createElement('div')),
   )
