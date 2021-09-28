@@ -16,7 +16,7 @@ const Column = styled.div`
   overflow: scroll;
 
   &:last-child {
-    background: #000;
+    background: #ccc;
   }
 `
 const Main = styled.div`
@@ -34,12 +34,22 @@ const Hotel = (props) => {
 
     axios.get(url)
       .then(res => {
-        setHotel(res.data)
+        setHotel(res.data.data.attributes)
         setLoaded(true)
-        console.log(res.data.data);
       })
       .catch(error => console.log(error))
   }, [])
+
+  const handleChange = e => {
+    e.target.value
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+
+    const hotel_id = id
+    
+  }
 
   return (
     <Wrapper>
@@ -50,14 +60,19 @@ const Hotel = (props) => {
             <Main>
               
                 <Header 
-                  attributes={hotel.data.attributes}
-                  reviews={hotel.included}
+                  attributes={hotel}
+                  reviews={hotel}
                 />
               <div className="reviews"></div>
             </Main>
           </Column>
           <Column>
-            <ReviewForm />
+            <ReviewForm 
+              handleChange={handleChange}
+              handleSubmit={handleSubmit}
+              attributes={hotel}
+              review={review}
+            />
           </Column>
         </>
       }

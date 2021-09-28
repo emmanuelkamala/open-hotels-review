@@ -1,15 +1,27 @@
 import React from 'react'
 
-const ReviewForm = () => {
+const ReviewForm = (props) => {
   return (
     <div>
-      <form>
-        <div>Have an experience with [hotel name]? Share your review...</div>
+      <form onSubmit={props.handleSubmit}>
+        <div>Have an experience with {props.attributes.name}? Share your review...</div>
         <div className="field">
-          <input type="text" name="title" placeholder="Review title" />
+          <input 
+            type="text" 
+            name="title" 
+            placeholder="Review title" 
+            onChange={props.handleChange} 
+            value={props.review.title} 
+          />
         </div>
         <div className="field">
-          <input type="text" name="description" placeholder="Review description" />
+          <input 
+            type="text" 
+            name="description" 
+            placeholder="Review description" 
+            onChange={props.handleChange} 
+            value={props.review.description} 
+          />
         </div>
         <div className="field">
           <div className="rating-container">

@@ -6,19 +6,17 @@ const Wrapper = styled.div`
   font-size: 18px;
 
   img {
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 500px;
+    object-fit: cover;
     border-radius: 3%;
     border: 1px solid rgba(0,0,0,0.1);
-    margin-bottom: -64px;
-    margin-right: 10px;
   }
 
 `
 const TotalReviews = styled.div`
   font-size: 18px;
   padding: 10px 0;
-  margin-top: 80px;
 `
 const TotalOutOf = styled.div`
   font-size: 18px;
@@ -31,7 +29,8 @@ const Header = (props) => {
   const total = props.reviews.length
   return (
     <Wrapper>
-      <h1><img src={image_url} alt={name} />{name}</h1>
+      <h1>{name}</h1>
+      <img src={image_url} alt={name} />
       <div>
         <TotalReviews>{total} User Reviews</TotalReviews>
         <div className="starRating"></div>
