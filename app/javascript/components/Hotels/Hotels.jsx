@@ -1,6 +1,30 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Hotel from './Hotel'
+import styled from 'styled-components'
+
+const Home = styled.div`
+  width: 100vw;
+  overflow: hidden;
+  
+`
+const Header = styled.div`
+  padding: 100px 100px 10px 100px;
+  h1 {
+    font-size: 42px;
+  }
+`
+const Subheader = styled.div`
+  font-weight: 300;
+  font-size: 26px;
+`
+const Grid = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+
+`
 
 const Hotels = () => {
   const [hotels, setHotels] = useState([])
@@ -19,15 +43,15 @@ const Hotels = () => {
   ))
 
   return (
-    <div className="home">
-      <div className="header">
+    <Home>
+      <Header>
         <h1>OpenHotels</h1>
-        <div className="subheader">Honest, Unbiased Hotels Reviews</div>
-      </div>
-      <div className="grid">
+        <Subheader>Honest, Unbiased Hotels Reviews</Subheader>
+      </Header>
+      <Grid>
         <ul>{grid}</ul>
-      </div>
-    </div>
+      </Grid>
+    </Home>
   )
 }
 
