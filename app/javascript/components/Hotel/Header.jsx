@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  padding: 50px 100px 50px 0;
+  padding: 50px 10px 50px 0;
+  font-size: 18px;
 
   img {
     height: 200px;
@@ -13,9 +14,6 @@ const Wrapper = styled.div`
     margin-right: 10px;
   }
 
-  h1 {
-    font-size: 30px;
-  }
 `
 const TotalReviews = styled.div`
   font-size: 18px;
