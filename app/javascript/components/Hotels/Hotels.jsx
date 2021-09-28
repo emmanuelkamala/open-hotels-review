@@ -7,10 +7,9 @@ const Home = styled.div`
  max-width: 1200px;
  margin: 0 auto;
  text-align: center;
-  
 `
 const Header = styled.div`
-  padding: 100px 100px 10px 100px;
+  padding: 50px 10px 100px 50px;
   h1 {
     font-size: 42px;
   }
@@ -20,13 +19,10 @@ const Subheader = styled.div`
   font-size: 26px;
 `
 const Grid = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  list-style: none;
-  flex: 1 0 20%;
-  margin: 5px;
-  height: 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  width: 100%;
 `
 
 const Hotels = () => {
@@ -52,7 +48,7 @@ const Hotels = () => {
         <Subheader>Honest, Unbiased Hotels Reviews</Subheader>
       </Header>
       <Grid>
-        <ul>{grid}</ul>
+        {grid}
       </Grid>
     </Home>
   )

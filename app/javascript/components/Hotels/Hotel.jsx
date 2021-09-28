@@ -5,15 +5,21 @@ import styled from 'styled-components'
 const Card = styled.div`
   border: 1px solid #efefef;
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `
 const HotelLogo = styled.div`
-  width: 50px;
+  width: 200px;
+  margin-top: 20px;
 
   img {
-    width: 50px;
-    height: 50px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 10px;
+    margin: 0 auto;
   }
 `
 const HotelName = styled.div`
